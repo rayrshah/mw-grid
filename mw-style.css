@@ -4,18 +4,22 @@
 
 html {
 	position: relative;
-	min-height: 100%; 
+	/*min-height: 100%;*/ 
 }
 
 body {
     margin: 0;
     font-family: 'Open Sans';
     font-size: 16px;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 .container {
 	margin: 7rem auto;
 	width: 100%;
 	max-width: 81.25em;
+	flex: 1;
 }
 .container-title {
 	margin: 0 auto;
@@ -150,12 +154,10 @@ li a:hover:not(.active) {
 	color: #639189;
 }
 .content {
-	clear: both;
 	float: left;
 	background-color: #fff;
     border-top: 3px white solid;
     border-right: 3px white solid;
-
 }
 .content p.title {
 	padding: 0 1px 0 0;
@@ -179,13 +181,21 @@ hr {
 	max-width: 80%;
 }
 footer {
-	clear: both;
+	clear: all;
 	background-color: #eee;
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 6rem;
     width: 100%;
+    padding: 1em;
+}
+
+#first {
+	float:left;
+}
+
+#third {
+	float: right;
 }
 
 /* start media query for bigger than  600 pixels */
