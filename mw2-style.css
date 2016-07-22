@@ -12,7 +12,6 @@ body {
     font-family: 'Open Sans';
     font-size: 16px;
 	display: flex;
-	min-height: 100vh;
 	flex-direction: column;
 }
 
@@ -135,7 +134,7 @@ li a:hover:not(.active) {
 .workshops {
 	background-image: url(./workshops.jpg);
 }
-.header-images, .content-container {
+.header-images {
 	display: flex;
 	width: 100%;
 }
@@ -143,9 +142,7 @@ li a:hover:not(.active) {
  .content-container {
 	display: flex;
 	background: blue;
-	border: 10px solid goldenrod;
 	width: 100%;
-	height: 100vh;
 }
 .title{
 	margin:0;
@@ -163,7 +160,7 @@ li a:hover:not(.active) {
 	color: #639189;
 }
 .content {
-	float: left;
+	flex:1;
 	background-color: #fff;
     border-top: 3px white solid;
     border-right: 3px white solid;
@@ -210,25 +207,29 @@ footer {
 /* start media query for bigger than  600 pixels */
 @media screen and (min-width:600px)	{
 	.sidebar {
-		float: left;
-		width: 100%;
+		flex:1;
+		display: flex;
 	    background-color: #fff;
+        flex-direction: row-reverse;
 	}
 	.sidebar1 {
-		float: left;
-		width: 50%;
+		flex:1;
  	    border-top: 3px white solid;
- 	    border-left: 3px white solid;
-        height: 100%;
+ 	    border-left: 1px #96cbc3 solid;
+	    padding-left: 2px;
 	}
 
 	.sidebar2 {
-		float: right;
-		width: 50%;
+		flex:1;
  	    padding: 3px;
-        height: 100%;
  	    border-left: 1px #96cbc3 solid;
 	}
+}
+
+@media screen and (max-width: 600px){
+  .sidebar{
+    flex-direction: column;
+  }
 }
 /* end media query for bigger than 600 pixels */
 
@@ -252,31 +253,25 @@ footer {
 .big img{
 	/*height: 110%;*/
 	}
+.content {
+	flex:1;
+}
 
 .sidebar {
-	float: right;
-	width: 50%;
     background-color: #fff;
 	}
 
 .sidebar1 {
-	float: left;
-	width: 50%;
     min-width: 150px;
-    height: 100%;
-    padding-left: 2px;
 }
 
 .sidebar2 {
-	float: right;
-	width: 50%;
 	min-width: 150px;
-    height: 100%;
-    margin-top: 3px;
-    padding-left: .6em;
+     padding-left: .6em;
 }
 
-.news-wrapper {
+
+/*.news-wrapper {
 	border-left: 1px solid #96cbc3;
 	margin-left: -5px;
 }
@@ -284,12 +279,9 @@ footer {
 .news-wrapper p:first-of-type {
 	margin-top:5px;
 	padding-top: 10px;
-}
+}*/
 
-.content {
-	float: left;
-	width: 50%;
-}
+
 
 p {
 	font-size: 100%
@@ -297,3 +289,8 @@ p {
 }
 /* end media query for bigger than  900 pixels*/
 
+@media screen and (max-width: 900px){
+  .content-container{
+    flex-direction: column;
+  }
+}
