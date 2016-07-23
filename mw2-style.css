@@ -35,6 +35,9 @@ body {
     background-color: #eee;
     z-index: 10;
     height: 4.5rem;
+    width: 100%;
+    max-width: 81.25em;
+    margin: 0 auto;
 }
 
 .logo {
@@ -141,7 +144,6 @@ li a:hover:not(.active) {
 
  .content-container {
 	display: flex;
-	background: blue;
 	width: 100%;
 }
 .title{
@@ -207,7 +209,6 @@ footer {
 /* start media query for bigger than  600 pixels */
 @media screen and (min-width:600px)	{
 	.sidebar {
-		flex:1;
 		display: flex;
 	    background-color: #fff;
         flex-direction: row-reverse;
@@ -259,7 +260,8 @@ footer {
 
 .sidebar {
     background-color: #fff;
-	}
+	flex:1;
+}
 
 .sidebar1 {
     min-width: 150px;
