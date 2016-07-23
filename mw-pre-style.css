@@ -10,15 +10,18 @@ body {
     margin: 0;
     font-family: 'Open Sans';
     font-size: 16px;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-ms-flex-direction: column;
+	    flex-direction: column;
 }
 
 .container {
 	margin: 7rem auto;
 	width: 100%;
 	max-width: 81.25em;
-	flex: 1;
+	-ms-flex: 1;
+	    flex: 1;
 }
 .container-title {
 	margin: 0 auto;
@@ -88,9 +91,8 @@ li a:hover:not(.active) {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 70%;
+/*  min-height: 70%;*/
     width:100%;
-    z-index: -1000;
 }
 .image-text {
 	clear:both;
@@ -105,9 +107,12 @@ li a:hover:not(.active) {
 }
 .smalls {
 	visibility: hidden;
-	flex-shrink: 1;
+	-ms-flex-negative: 1;
+	    flex-shrink: 1;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 	width:1px;
 }
 
@@ -115,11 +120,13 @@ li a:hover:not(.active) {
 	visibility: hidden;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 25px;
-    flex-grow: 1;
-    flex-basis: 50%;
-/*    height: 200px;
-*/}
+    background-position: 0 1.5rem;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    min-height: 12.5rem;
+}
 
 .attend{
 	background-image: url('./attend.jpg');
@@ -137,11 +144,13 @@ li a:hover:not(.active) {
 	background-image: url(./workshops.jpg);
 }
 .header-images {
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 }
 
  .content-container {
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 }
@@ -161,7 +170,8 @@ li a:hover:not(.active) {
 	color: #639189;
 }
 .content {
-	flex:1;
+	-ms-flex:1;
+	    flex:1;
 	background-color: #fff;
     border-top: 3px white solid;
     border-right: 3px white solid;
@@ -188,39 +198,43 @@ hr {
 	max-width: 80%;
 }
 footer {
-	clear: all;
 	background-color: #eee;
-/*    position: fixed;*/
-    left: 0;
+	max-width: 81.25em;
+	margin: 0 auto;
     bottom: 0;
     width: 100%;
-    padding: 1em;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
-#first {
-	float:left;
-}
+footer .textwidget {
+    	font-size-adjust: 80%;
+    	flex-grow:1;
+    }
 
-#third {
-	float: right;
-}
 
 /* start media query for bigger than  600 pixels */
 @media screen and (min-width:600px)	{
 	.sidebar {
+		display: -ms-flexbox;
 		display: flex;
 	    background-color: #fff;
-        flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
 	}
 	.sidebar1 {
-		flex:1;
+		-ms-flex:1;
+		    flex:1;
  	    border-top: 3px white solid;
  	    border-left: 1px #96cbc3 solid;
 	    padding-left: 2px;
 	}
 
 	.sidebar2 {
-		flex:1;
+		-ms-flex:1;
+		    flex:1;
  	    padding: 3px;
  	    border-left: 1px #96cbc3 solid;
 	}
@@ -228,7 +242,8 @@ footer {
 
 @media screen and (max-width: 600px){
   .sidebar{
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 }
 /* end media query for bigger than 600 pixels */
@@ -239,7 +254,8 @@ footer {
 @media screen and (min-width:900px) { 
 .smalls {
 	visibility: visible;
-	flex: 1;
+	-ms-flex: 1;
+	    flex: 1;
 	}
 .small {
 	visibility: visible;
@@ -247,19 +263,22 @@ footer {
 	}
 .big {
 	border-right: 3px white solid;
-	flex: 1;
+	-ms-flex: 1;
+	    flex: 1;
 	min-height: 50%
 	}
 .big img{
 	/*height: 110%;*/
 	}
 .content {
-	flex:1;
+	-ms-flex:1;
+	    flex:1;
 }
 
 .sidebar {
     background-color: #fff;
-	flex:1;
+	-ms-flex:1;
+	    flex:1;
 }
 
 .sidebar1 {
@@ -292,6 +311,7 @@ p {
 
 @media screen and (max-width: 900px){
   .content-container{
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 }
